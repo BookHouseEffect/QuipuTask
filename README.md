@@ -19,3 +19,6 @@ User Story:
 - Сервисот проверува конфигурација и темплејт за тој тип.
 - Системот рендерира маил
 - Системот праќа маил
+
+## Solution Architecture
+![Architecture](https://github.com/BookHouseEffect/QuipuTask/blob/master/architecture.png?raw=true)
