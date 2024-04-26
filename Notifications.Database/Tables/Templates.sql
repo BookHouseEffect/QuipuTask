@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[Templates]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+	[Name] NVARCHAR(100) NOT NULL,
+	[Sender] NVARCHAR(255) NOT NULL,
+	[Subject] NVARCHAR(255) NOT NULL,
+	[Content] NVARCHAR(MAX) NOT NULL,
+	[IsContentHtml] BIT NOT NULL,
+	[OwnerId] UNIQUEIDENTIFIER NOT NULL,
+	CONSTRAINT PK_Templates_Id PRIMARY KEY ([Id]),
+	CONSTRAINT FK_TemplatesClients FOREIGN KEY ([OwnerId]) REFERENCES [dbo].[Clients] ([Id]),
+	CONSTRAINT UC_Templates_OwnerId_Name UNIQUE ([OwnerId], [Name])
+)
